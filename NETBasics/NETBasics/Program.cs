@@ -15,6 +15,13 @@ namespace NETBasics
 
     class Oso : Animal
     {
+   
+        public Oso(int edad)
+        {
+
+
+        }
+        public int Nombre { get; set; }
     }
 
     class Pajaro : Animal, Vuelo
@@ -55,7 +62,7 @@ namespace NETBasics
 
             //animal.Correr();
 
-            Oso oso = new Oso();
+            Oso oso = new Oso(1);
             oso.Comer();
             oso.Correr();
             oso.Cantar("oso");
@@ -67,9 +74,20 @@ namespace NETBasics
             pajaro.Volar();
             pajaro.Cantar();
 
+            Leer();
+
+            string rfc = "xxxx";
+
             // Como pueden ver las interfaces no se pueden instanciar
             // Vuelo vuelo = new Vuelo();
 
+        }
+
+        private static void Leer()
+        {
+            int edad = 20;
+
+            Oso oso = new Oso(1);
         }
     }
 }

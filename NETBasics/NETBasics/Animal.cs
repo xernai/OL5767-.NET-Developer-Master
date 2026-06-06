@@ -8,6 +8,10 @@ namespace NETBasics1
 {
     public class Animal
     {
+        public Animal() { }
+
+        public Animal(int edad) { }
+
         public string Name { get; set; }
 
         private decimal Costo { get; set; }
