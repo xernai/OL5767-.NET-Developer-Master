@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="NikiShop.Ecommerce.WebApi/NikiShop.Ecommerce.WebApi.csproj" />
+  <Project Path="NikiShop.Ecommerce.WebMvc/NikiShop.Ecommerce.WebMvc.csproj" />
+</Solution>

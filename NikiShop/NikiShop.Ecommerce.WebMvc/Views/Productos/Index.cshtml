@@ -1,0 +1,29 @@
+@model IEnumerable<NikiShop.Ecommerce.WebMvc.Models.Producto>
+
+@{
+    ViewData["Title"] = "Lista de Productos";
+}
+
+<h1>Lista de Productos</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdProducto</td>
+                <td>@item.Nombre</td>
+                <td>@item.PrecioVenta.ToString("C")</td>
+                <td>@item.StockActual</td>
+            </tr>
+        }
+    </tbody>
+</table>
