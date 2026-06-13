@@ -16,7 +16,7 @@ namespace NikiShop.Ecommerce.WebMvc.Controllers
         }
 
         // GET: Productos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> GetProductos()
         {
             var productos = await _context.Productos.Take(20).ToListAsync();
             return View(productos);

@@ -55,7 +55,7 @@ namespace NikiShop.Ecommerce.WebMvc
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Productos}/{action=GetProductos}");
             });
         }
     }
