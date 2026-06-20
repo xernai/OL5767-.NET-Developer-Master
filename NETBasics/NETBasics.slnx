@@ -19,6 +19,8 @@
   </Folder>
   <Project Path="AbstractClass/AbstractClass.csproj" Id="f199a485-9cf7-4206-a8a9-84e8f7b1943f" />
   <Project Path="AsynProgramming/AsynProgramming.csproj" Id="7be9c8d9-f315-405e-9c4d-898e65b3bf7f" />
+  <Project Path="Generics01/Generics01.csproj" Id="4c5f324b-5b90-4b89-a985-7f36e869557b" />
+  <Project Path="Generics02/Generics02.csproj" Id="ac89ff21-6ab4-4e76-b961-5c3b36809961" />
   <Project Path="Module22/Module22.csproj" Id="44e920b2-7cf2-4d80-9c2f-c0c877cdce74" />
   <Project Path="Module24/Module24.csproj" Id="f409efc0-9d62-4669-93d9-b92fc39f756c" />
   <Project Path="Module25/Module25.csproj" Id="e56b8f56-533f-41d5-82c2-7468b9a43705" />
