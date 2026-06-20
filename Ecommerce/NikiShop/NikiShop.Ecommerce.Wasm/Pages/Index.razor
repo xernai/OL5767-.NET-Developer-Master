@@ -1,0 +1,244 @@
+@page "/"
+@inject HttpClient Http
+
+<div class="dashboard-container">
+    <!-- Header Banner -->
+    <header class="dashboard-header animate-fade-in">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <span class="badge-accent">NikiShop WASM</span>
+            <h1>Catálogo de Productos</h1>
+            <p>Monitoreo de inventario y precios en tiempo real</p>
+        </div>
+    </header>
+
+    <!-- Metrics Cards -->
+    <section class="metrics-grid">
+        <div class="metric-card animate-slide-up delay-1">
+            <div class="metric-icon bg-primary">
+                <i class="icon-box">📦</i>
+            </div>
+            <div class="metric-info">
+                <h3>Total Productos</h3>
+                @if (isLoading)
+                {
+                    <span class="skeleton-text short"></span>
+                }
+                else if (productos != null)
+                {
+                    <h2>@productos.Count</h2>
+                }
+                else
+                {
+                    <h2>0</h2>
+                }
+            </div>
+        </div>
+
+        <div class="metric-card animate-slide-up delay-2">
+            <div class="metric-icon bg-warning">
+                <i class="icon-alert">⚠️</i>
+            </div>
+            <div class="metric-info">
+                <h3>Bajo Stock (&lt; 5)</h3>
+                @if (isLoading)
+                {
+                    <span class="skeleton-text short"></span>
+                }
+                else if (productos != null)
+                {
+                    <h2>@productos.Count(p => p.StockActual < 5)</h2>
+                }
+                else
+                {
+                    <h2>0</h2>
+                }
+            </div>
+        </div>
+
+        <div class="metric-card animate-slide-up delay-3">
+            <div class="metric-icon bg-success">
+                <i class="icon-money">💰</i>
+            </div>
+            <div class="metric-info">
+                <h3>Valor Inventario</h3>
+                @if (isLoading)
+                {
+                    <span class="skeleton-text short"></span>
+                }
+                else if (productos != null)
+                {
+                    <h2>$@((productos.Sum(p => p.PrecioVenta * p.StockActual)).ToString("N2"))</h2>
+                }
+                else
+                {
+                    <h2>$0.00</h2>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main animate-slide-up delay-4">
+        <div class="table-card">
+            <!-- Table Header / Controls -->
+            <div class="card-controls">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" 
+                           placeholder="Buscar por nombre..." 
+                           @bind-value="searchTerm" 
+                           @bind-value:event="oninput" 
+                           @onkeyup="FilterProducts" />
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" @onclick="LoadDataAsync" disabled="@isLoading">
+                        <span class="btn-icon">🔄</span> Actualizar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            @if (isLoading)
+            {
+                <div class="loading-state">
+                    <div class="shimmer-wrapper">
+                        <div class="shimmer-row header"></div>
+                        <div class="shimmer-row"></div>
+                        <div class="shimmer-row"></div>
+                        <div class="shimmer-row"></div>
+                        <div class="shimmer-row"></div>
+                    </div>
+                    <p class="loading-text">Conectando con la API y cargando catálogo...</p>
+                </div>
+            }
+            else if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="error-state">
+                    <div class="error-icon">❌</div>
+                    <h3>Error al cargar datos</h3>
+                    <p>@errorMessage</p>
+                    <p class="error-tip">Por favor asegúrate de que el proyecto <strong>NikiShop.Ecommerce.WebApi</strong> esté corriendo en <code>https://localhost:5001</code>.</p>
+                    <button class="btn btn-primary mt-3" @onclick="LoadDataAsync">Reintentar conexión</button>
+                </div>
+            }
+            else if (filteredProductos == null || !filteredProductos.Any())
+            {
+                <div class="empty-state">
+                    <div class="empty-icon">📂</div>
+                    <h3>No se encontraron productos</h3>
+                    @if (productos == null || !productos.Any())
+                    {
+                        <p>No hay productos registrados en el sistema actualmente.</p>
+                    }
+                    else
+                    {
+                        <p>No coincide ningún producto con el filtro de búsqueda.</p>
+                    }
+                </div>
+            }
+            else
+            {
+                <!-- Table View -->
+                <div class="table-responsive">
+                    <table class="premium-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del Producto</th>
+                                <th class="text-right">Precio de Venta</th>
+                                <th class="text-center">Stock</th>
+                                <th class="text-center">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var producto in filteredProductos)
+                            {
+                                <tr>
+                                    <td class="col-id">#@producto.IdProducto</td>
+                                    <td class="col-name">
+                                        <div class="product-info-cell">
+                                            <span class="product-avatar">@producto.Nombre.Substring(0, 1).ToUpper()</span>
+                                            <span class="product-name-text">@producto.Nombre</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-price text-right font-medium">$@producto.PrecioVenta.ToString("N2")</td>
+                                    <td class="col-stock text-center">@producto.StockActual</td>
+                                    <td class="col-status text-center">
+                                        @if (producto.StockActual == 0)
+                                        {
+                                            <span class="badge badge-danger pulse">Agotado</span>
+                                        }
+                                        else if (producto.StockActual < 5)
+                                        {
+                                            <span class="badge badge-warning">Bajo Stock</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-success">Disponible</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </main>
+</div>
+
+@code {
+    private List<Producto> productos;
+    private List<Producto> filteredProductos;
+    private string searchTerm = "";
+    private bool isLoading = true;
+    private string errorMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadDataAsync();
+    }
+
+    private async Task LoadDataAsync()
+    {
+        isLoading = true;
+        errorMessage = "";
+        StateHasChanged();
+
+        try
+        {
+            // Intentamos traer la primera página de productos (20 elementos)
+            productos = await Http.GetFromJsonAsync<List<Producto>>("api/productos?page=1&pageSize=20");
+            FilterProducts();
+        }
+        catch (Exception ex)
+        {
+            productos = null;
+            filteredProductos = null;
+            errorMessage = $"No se pudo obtener la información de los productos. Detalles: {ex.Message}";
+            Console.WriteLine(ex.ToString());
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void FilterProducts()
+    {
+        if (productos == null) return;
+
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredProductos = productos;
+        }
+        else
+        {
+            filteredProductos = productos
+                .Where(p => p.Nombre.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+}
