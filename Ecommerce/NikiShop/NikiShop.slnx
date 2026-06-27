@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Azure/">
+    <Project Path="Azure/Storage/NikiShop.Ecommerce.StorageDataSeeding/NikiShop.Ecommerce.StorageDataSeeding.csproj" Id="9e109a2d-9da3-48bd-afa0-60870b0c6057" />
+  </Folder>
   <Project Path="BlazorApp1/BlazorApp1.csproj" Id="5513c38b-5685-484c-a12b-88bccf945836" />
   <Project Path="BlazorApp2/BlazorApp2.csproj" Id="0b4be06e-3ff6-47d1-918c-a9aa2456e852" />
   <Project Path="NikiShop.Ecommerce.Wasm/NikiShop.Ecommerce.Wasm.csproj" />

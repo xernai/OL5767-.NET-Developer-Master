@@ -1,0 +1,6 @@
+@NikiShop.Ecommerce.TableStorageWebApi_HostAddress = http://localhost:5097
+
+GET {{NikiShop.Ecommerce.TableStorageWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
