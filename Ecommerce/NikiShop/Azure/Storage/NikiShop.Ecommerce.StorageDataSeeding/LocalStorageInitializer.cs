@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 public static class LocalStorageInitializer
 {
     private const string ConnectionString = "UseDevelopmentStorage=true";
-
     public static async Task InicializarYAlimentarEstructuraLocalAsync()
     {
         Console.WriteLine("Iniciando aprovisionamiento de Azure Storage Local con Productos...");
