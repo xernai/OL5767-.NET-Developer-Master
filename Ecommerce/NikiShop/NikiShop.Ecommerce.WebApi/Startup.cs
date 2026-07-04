@@ -28,6 +28,12 @@ namespace NikiShop.Ecommerce.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // El método GetConnectionString buscará automáticamente "ConnectionStrings--DefaultConnection" en tu Key Vault
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(connectionString));
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",
