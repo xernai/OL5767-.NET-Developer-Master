@@ -8,7 +8,7 @@ namespace Azure.ServiceBus.ReceiveSample
     internal class Program
     {
         private static IQueueClient queueClient;
-        private const string ServiceBusConnectionString = "Endpoint=sb://nikishop.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/e4hcdVO69eMQLTizaCgKoD7Twsu3lxIM+ASbL0FdVA=";
+        private const string ServiceBusConnectionString = "";
         private const string QueueName = "ecommerce";
 
         public static void Main(string[] args)
