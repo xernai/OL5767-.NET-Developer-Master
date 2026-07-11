@@ -1,10 +1,13 @@
 <Solution>
   <Folder Name="/Azure/" />
   <Folder Name="/Azure/Functions/">
+    <Project Path="Azure/Functions/AzureBlobTriggerFunction-1/AzureBlobTriggerFunction-1.csproj" Id="25111133-99c2-4158-ad2b-c4d92d9cb4eb" />
     <Project Path="Azure/Functions/AzureBlobTriggerFunction/AzureBlobTriggerFunction.csproj" />
     <Project Path="Azure/Functions/BlobTriggerDemo/BlobTriggerDemo.csproj" Id="a84f1363-264a-440a-bc14-2bfcb8d59915" />
+    <Project Path="Azure/Functions/HttpTriggerDemo/HttpTriggerDemo-1/HttpTriggerDemo-1.csproj" Id="8ac00f67-b793-4d3a-862d-58ef004448c9" />
     <Project Path="Azure/Functions/HttpTriggerDemo/HttpTriggerDemo.csproj" Id="e0ca237c-d391-413e-b44a-46e26612468f" />
     <Project Path="Azure/Functions/HttpTriggerRequestsDemo/HttpTriggerRequestsDemo.csproj" Id="bf8803dc-17ac-43c6-bb61-f104f3621820" />
+    <Project Path="Azure/Storage/Blob/BlobTriggerDemo-1/BlobTriggerDemo-1.csproj" Id="9c6516a0-2f98-419d-8d09-9a026230891e" />
   </Folder>
   <Folder Name="/Azure/Message Services/" />
   <Folder Name="/Azure/Message Services/ServiceBus/">

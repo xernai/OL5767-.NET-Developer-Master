@@ -23,7 +23,7 @@ namespace AzureBlobStorageDemo.API.Controllers
         [HttpPost("Upload")]
         public async Task<IActionResult> UploadFile([FromForm] FileDetails fileDetail)
         {
-            if (fileDetail.file != null)
+            if (fileDetail.file != null)-
             {
                 await _blobService.UploadFileAsync(fileDetail);
             }

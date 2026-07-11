@@ -6,7 +6,7 @@ namespace Azure.Storage.QueueSendExample
 {
     internal class Program
     {
-        public static string connstring = "";
+        public static string connstring = "DefaultEndpointsProtocol=https;AccountName=nikishop;AccountKey=+2GOipF9iQJUN2m5VaifK9JJxRwmGckcN23UXm3Ti0cmWVIx546245sQyfCImNO/MtQ92f7VlYHa+ASt0Bshsw==;EndpointSuffix=core.windows.net";
 
         static void Main(string[] args)
         {
@@ -20,7 +20,7 @@ namespace Azure.Storage.QueueSendExample
 
             CloudQueue cloudQueue = cloudQueueClient.GetQueueReference("ecommerce");
 
-            var message = "Collar Mattingale K100 para mi perro";
+            var message = "Croquetas Beneful para mi perro";
             CloudQueueMessage queueMessage = new CloudQueueMessage(message);
             cloudQueue.AddMessage(queueMessage);
 
