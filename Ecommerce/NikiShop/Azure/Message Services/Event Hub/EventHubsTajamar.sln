@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMessagesTajamar", "EventHubsTajamar\SendMessagesTajamar.csproj", "{EC1015F0-C3C7-4940-A63F-B98604F11B2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceptorMensagesTajamar", "ReceptorMensagesTajamar\ReceptorMensagesTajamar.csproj", "{9D3793BB-444F-443D-855B-87EE84A6A91C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC1015F0-C3C7-4940-A63F-B98604F11B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1015F0-C3C7-4940-A63F-B98604F11B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1015F0-C3C7-4940-A63F-B98604F11B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1015F0-C3C7-4940-A63F-B98604F11B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D3793BB-444F-443D-855B-87EE84A6A91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3793BB-444F-443D-855B-87EE84A6A91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3793BB-444F-443D-855B-87EE84A6A91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3793BB-444F-443D-855B-87EE84A6A91C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D197D25-AF33-4010-8820-E7597385F00E}
+	EndGlobalSection
+EndGlobal

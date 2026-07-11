@@ -1,7 +1,25 @@
 <Solution>
   <Folder Name="/Azure/" />
+  <Folder Name="/Azure/Functions/">
+    <Project Path="Azure/Functions/AzureBlobTriggerFunction/AzureBlobTriggerFunction.csproj" />
+    <Project Path="Azure/Functions/BlobTriggerDemo/BlobTriggerDemo.csproj" Id="a84f1363-264a-440a-bc14-2bfcb8d59915" />
+    <Project Path="Azure/Functions/HttpTriggerDemo/HttpTriggerDemo.csproj" Id="e0ca237c-d391-413e-b44a-46e26612468f" />
+    <Project Path="Azure/Functions/HttpTriggerRequestsDemo/HttpTriggerRequestsDemo.csproj" Id="bf8803dc-17ac-43c6-bb61-f104f3621820" />
+  </Folder>
+  <Folder Name="/Azure/Message Services/" />
+  <Folder Name="/Azure/Message Services/ServiceBus/">
+    <Project Path="Azure/Message Services/Service Bus/Azure.ServiceBus.ReceiveSample/Azure.ServiceBus.ReceiveSample.csproj" />
+    <Project Path="Azure/Message Services/Service Bus/Azure.ServiceBus.SendSample/Azure.ServiceBus.SendSample.csproj" />
+  </Folder>
   <Folder Name="/Azure/Storage/" />
-  <Folder Name="/Azure/Storage/Queue/" />
+  <Folder Name="/Azure/Storage/Blob/">
+    <Project Path="Azure/Storage/Blob/Azure.Storage.Blob.AuladiserService/Azure.Storage.Blob.AuladiserService.csproj" />
+    <Project Path="Azure/Storage/Blob/AzureBlobStorageDemo/AzureBlobStorageDemo.API.csproj" />
+  </Folder>
+  <Folder Name="/Azure/Storage/Queue/">
+    <Project Path="Azure/Storage/Queue/Azure.Storage.QueueReceiveExample/Azure.Storage.QueueReceiveExample.csproj" />
+    <Project Path="Azure/Storage/Queue/Azure.Storage.QueueSendExample/Azure.Storage.QueueSendExample/Azure.Storage.QueueSendExample.csproj" />
+  </Folder>
   <Folder Name="/Azure/Storage/Table/" />
   <Folder Name="/Azure/Storage/Table/DataSeeding/">
     <Project Path="Azure/Storage/NikiShop.Ecommerce.StorageDataSeeding/NikiShop.Ecommerce.StorageDataSeeding.csproj" Id="9e109a2d-9da3-48bd-afa0-60870b0c6057" />
