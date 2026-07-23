@@ -67,8 +67,8 @@ namespace TopicSender
             // regularly.
             //TODO: Replace the "<NAMESPACE-CONNECTION-STRING>" and "<TOPIC-NAME>" placeholders.
 
-            client = new ServiceBusClient("");
-            sender = client.CreateSender("rustico");
+            client = new ServiceBusClient("Endpoint=sb://nikishop-1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=bm/ulDfHZQNUf1Q1YBIJ8A92u8nXT+XdN+ASbPn5UsU=");
+            sender = client.CreateSender("ecommerce");
 
             // create a batch 
             using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Order.Api.Controllers
 {
     [ApiController]
-    [Route("orders")]
+    [Route("[controller]")]
     public class OrderController : ControllerBase
     {
         private readonly IHandler<OrderCreateCommand> _handler;

@@ -136,7 +136,7 @@ namespace TopicsFiltersAndActionsWebApi.Controllers
                 new ServiceBusAdministrationClient(connectionString);
 
             await administrationClient.CreateSubscriptionAsync(
-                new CreateSubscriptionOptions("rustico", "SqlFilterAndActionSubscription-3"),
+                new CreateSubscriptionOptions("ecommerce", "SqlFilterAndActionSubscription-3"),
                 new CreateRuleOptions
                 {
                     Action = new SqlRuleAction("SET Age = Age * 2;"),
@@ -151,7 +151,7 @@ namespace TopicsFiltersAndActionsWebApi.Controllers
                 Name = "AWS"
             };
 
-            var sender1 = client.CreateSender("rustico");
+            var sender1 = client.CreateSender("ecommerce");
 
             var serviceBusMessage = new ServiceBusMessage()
             {
