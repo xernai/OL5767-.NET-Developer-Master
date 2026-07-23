@@ -2,11 +2,11 @@
 using System.Collections.Concurrent;
 
 // "https://localhost:8081";
-//"QIDNUiLx4ypY7zBfB1725C0KPnQTad690zEFMsT2Xf9JuqByBhbd0i45PTakqimWtssXjkZyNqzjACDbS7Oi2Q=="; // Clave fija del emulador
+// Clave fija del emulador
 
 // 1. Configurar las credenciales (Reemplaza con tus datos de Azure o usa los del Emulador local)
 string cosmosEndpoint = "https://nikishop-cosmos-nosql.documents.azure.com:443/";
-string cosmosApiKey = "QIDNUiLx4ypY7zBfB1725C0KPnQTad690zEFMsT2Xf9JuqByBhbd0i45PTakqimWtssXjkZyNqzjACDbS7Oi2Q=="; // Clave fija del emulador
+string cosmosApiKey = ""; // Clave fija del emulador
 
 string databaseId = "TelemetriaDB";
 string containerId = "Dispositivos";

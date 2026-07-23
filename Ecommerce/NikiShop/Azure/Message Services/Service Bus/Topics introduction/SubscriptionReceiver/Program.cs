@@ -20,7 +20,7 @@ namespace SubscriptionReceiver
             //
             // Create the clients that we'll use for sending and processing messages.
             // TODO: Replace the <NAMESPACE-CONNECTION-STRING> placeholder
-            client = new ServiceBusClient("Endpoint=sb://nikishop-1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=bm/ulDfHZQNUf1Q1YBIJ8A92u8nXT+XdN+ASbPn5UsU=");
+            client = new ServiceBusClient("");
 
             // create a processor that we can use to process the messages
             // TODO: Replace the <TOPIC-NAME> and <SUBSCRIPTION-NAME> placeholders
