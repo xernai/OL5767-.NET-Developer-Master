@@ -11,7 +11,11 @@ on:
     paths:
       - 'Ecommerce/NikiShop/NikiShop.Ecommerce.WebApi/**'
       - '.github/workflows/nikishop-webapi.yml'
-
+      
+env:
+  AZURE_WEBAPP_NAME: 'nikishop'              # Nombre de tu Azure Web App
+  AZURE_WEBAPP_PACKAGE_PATH: './publish'     # Carpeta destino para la publicación
+  
 jobs:
   build:
     name: Build Web API
@@ -31,3 +35,14 @@ jobs:
 
     - name: Build Web API
       run: dotnet build Ecommerce/NikiShop/NikiShop.Ecommerce.WebApi/NikiShop.Ecommerce.WebApi.csproj --no-restore --configuration Release
+
+    # --- NUEVOS PASOS PARA EL DESPLIEGUE ---
+    - name: Publish Web API
+      run: dotnet publish Ecommerce/NikiShop/NikiShop.Ecommerce.WebApi/NikiShop.Ecommerce.WebApi.csproj -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }} --no-build
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} # Secret que debes agregar en tu repositorio de GitHub
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
