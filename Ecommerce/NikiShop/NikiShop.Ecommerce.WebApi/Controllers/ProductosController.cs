@@ -20,7 +20,7 @@ namespace NikiShop.Ecommerce.WebApi.Controllers
         }
 
         // GET: api/Productos?page=1&pageSize=20
-        [HttpGet]
+        [HttpGe]
         public async Task<ActionResult<IEnumerable<Producto>>> GetProductos([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
         {
             if (page < 1) page = 1;
