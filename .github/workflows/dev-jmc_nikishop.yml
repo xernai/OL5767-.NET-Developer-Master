@@ -1,4 +1,4 @@
-name: Build NikiShop Web API
+name: Build NikiShop Web dev-jmc_nikishop
 
 on:
   push:
