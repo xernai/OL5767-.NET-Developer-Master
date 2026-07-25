@@ -33,7 +33,7 @@ namespace NikiShop.Ecommerce.WebApi.Controllers
         }
 
         // GET: api/Productos/5
-        [HttpGe("{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Producto>> GetProducto(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
@@ -44,6 +44,22 @@ namespace NikiShop.Ecommerce.WebApi.Controllers
             }
 
             return producto;
+        }
+
+        // GET: api/Productos/search?name=xyz
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<Producto>>> SearchByName([FromQuery] string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return BadRequest("The 'name' parameter is required.");
+            }
+
+            var productos = await _context.Productos
+                .Where(p => p.Nombre.Contains(name))
+                .ToListAsync();
+
+            return productos;
         }
     }
 }
