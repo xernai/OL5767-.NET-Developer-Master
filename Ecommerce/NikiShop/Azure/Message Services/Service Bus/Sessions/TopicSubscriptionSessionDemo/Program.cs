@@ -3,16 +3,6 @@
 string connectionString = "";
 string topicName = "ecommerce";
 
-//var client = new ServiceBusClient(connectionString);
-//var sender = client.CreateSender(topicName);
-
-//var message = new ServiceBusMessage("Mensaje 1 del pedido")
-//{
-//    SessionId = "Pedido-12345" // ID de la sesión
-//};
-
-//await sender.SendMessageAsync(message);
-
 // 1. Crear el cliente y el remitente
 await using var client = new ServiceBusClient(connectionString);
 ServiceBusSender sender = client.CreateSender(topicName);

@@ -23,7 +23,7 @@ namespace Order.Api.Commands.Handlers
             // 01. Your logic to order creation
 
             // 02. Azure Service Bus
-            var client = _serviceBus.GetQueueClient("leon");
+            var client = _serviceBus.GetQueueClient("inventory-stock");
 
             var json = JsonSerializer.Serialize(
                 command.Items.Select(x => new ProductStockEvent { 
