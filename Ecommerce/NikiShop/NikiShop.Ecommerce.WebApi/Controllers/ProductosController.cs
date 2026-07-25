@@ -33,7 +33,7 @@ namespace NikiShop.Ecommerce.WebApi.Controllers
         }
 
         // GET: api/Productos/5
-        [HttpGet("{id}")]
+        [HttpGe("{id}")]
         public async Task<ActionResult<Producto>> GetProducto(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
