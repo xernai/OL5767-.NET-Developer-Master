@@ -62,9 +62,9 @@ namespace NikiShop.Ecommerce.WebApi.Controllers
             return productos;
         }
 
-        // GET: api/Productos/nombre
-        [HttpGet("{nombre}")]
-        public string GetSalute(string nombre)
+        // GET: api/Productos/saludar?nombre=Juan
+        [HttpGet("saludar")]
+        public string GetSalute([FromQuery] string nombre)
         {
             return "Hola" + nombre;
         }
