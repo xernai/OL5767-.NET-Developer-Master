@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EventGridSender": {
+      "commandName": "Project",
+      "commandLineArgs": "motoComprada"
+    }
+  }
+}

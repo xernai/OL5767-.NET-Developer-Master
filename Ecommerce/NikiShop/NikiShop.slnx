@@ -1,5 +1,11 @@
 <Solution>
-  <Folder Name="/Azure/" />
+  <Folder Name="/Azure/">
+    <Project Path="Azure/Message Services/Event Grid/EventGridReceiverAPI/EventGridSubscriberApi.csproj" />
+    <Project Path="Azure/Message Services/Event Hub/EventHubsReceiver/EventHubsReceiver.csproj" />
+    <Project Path="Azure/Message Services/Event Hub/EventHubsReceiverDemo/EventHubsReceiverDemo.csproj" />
+    <Project Path="Azure/Message Services/Event Hub/EventHubsSender/EventHubsSender.csproj" />
+    <Project Path="Azure/Message Services/Event Hub/EventHubsSenderDemo/EventHubsSenderDemo.csproj" />
+  </Folder>
   <Folder Name="/Azure/CosmosDB/">
     <Project Path="CosmosDb/Azure.CosmosDB.PeopleCRUD/Azure.CosmosDB.PeopleCRUD.csproj" />
     <Project Path="CosmosDb/CosmosDbDemo/CosmosDbDemo.csproj" Id="d3a2c2e3-0d2d-433a-8295-19d6b22e0e09" />
@@ -14,7 +20,13 @@
     <Project Path="Azure/Functions/HttpTriggerRequestsDemo/HttpTriggerRequestsDemo.csproj" Id="bf8803dc-17ac-43c6-bb61-f104f3621820" />
     <Project Path="Azure/Storage/Blob/BlobTriggerDemo-1/BlobTriggerDemo-1.csproj" Id="9c6516a0-2f98-419d-8d09-9a026230891e" />
   </Folder>
-  <Folder Name="/Azure/Message Services/" />
+  <Folder Name="/Azure/Message Services/">
+    <Project Path="Azure/Message Services/Event Grid/EventGridSendConsole/EventGridSendConsole.csproj" />
+  </Folder>
+  <Folder Name="/Azure/Message Services/Event Grid/">
+    <Project Path="Azure/Message Services/Event Grid/EventGridReceiver/EventGridReceiver.csproj" />
+    <Project Path="Azure/Message Services/Event Grid/EventGridSender/EventGridSender.csproj" Id="f29f2fb6-fbdf-4f85-aeb1-068f5cf886fe" />
+  </Folder>
   <Folder Name="/Azure/Message Services/ServiceBus/" />
   <Folder Name="/Azure/Message Services/ServiceBus/Microservices/">
     <Project Path="Azure/Message Services/Service Bus/Microservices/Common.Bus/Common.Bus.csproj" />
@@ -52,6 +64,7 @@
   <Folder Name="/Azure/Storage/Table/WebApi/">
     <Project Path="Azure/Storage/Table/NikiShop.Ecommerce.TableStorageWebApi/NikiShop.Ecommerce.TableStorageWebApi.csproj" />
   </Folder>
+  <Project Path="AzureGithubDeploymentPOC/AzureGithubDeploymentPOC.csproj" />
   <Project Path="BlazorApp1/BlazorApp1.csproj" Id="5513c38b-5685-484c-a12b-88bccf945836" />
   <Project Path="BlazorApp2/BlazorApp2.csproj" Id="0b4be06e-3ff6-47d1-918c-a9aa2456e852" />
   <Project Path="NikiShop.Ecommerce.Wasm/NikiShop.Ecommerce.Wasm.csproj" />
